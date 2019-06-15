@@ -1,15 +1,16 @@
 ### Date created
-Include the date you created this project and README file.
+06/15/2019
 
 ### Project Title
-Replace the Project Title
+bikeshare project
 
 ### Description
-Describe what your project is about and what it does
+Analyze the bikeshare data from Chicago, New York City and Washington
 
 ### Files used
-Include the files used
+chicago.csv
+new_york_city.csv
+whington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+N/A
