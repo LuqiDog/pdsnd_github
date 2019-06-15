@@ -50,18 +50,18 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     df = pd.read_csv(CITY_DATA[city])
-    
+
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-    
+
     df['month'] = df['Start Time'].dt.month
-    
+
     df['day_of_week'] = df['Start Time'].dt.weekday_name
-    
+
     if month != 'All':
         months = ['January', 'February', 'March', 'April', 'May', 'June']
         month = months.index(month) + 1
         df = df[df['month'] == month]
-            
+
     if day != 'All':
         df = df[df['day_of_week'] == day.title()]
 
@@ -91,7 +91,7 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """Displays statistics on the most popular station and trip."""
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
@@ -152,13 +152,13 @@ def user_stats(df):
         earliest_birth = df['Birth Year'].min()
         most_recent_birth = df['Birth Year'].max()
         most_common_birth = df['Birth Year'].mode()[0]
-        
+
         print('\nThe earliest year of birth:',earliest_birth)
         print('\nThe most recent year of birth:',most_recent_birth)
         print('\nThe most common year of birth:',most_common_birth)
     else:
         print('\nNo Birth Year Available.')
-        
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
